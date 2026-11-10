@@ -27,8 +27,6 @@ int countRange(Node* r, int L, int R) {
     if (r->data > R) return countRange(r->left, L, R);
     return 1 + countRange(r->left, L, R) + countRange(r->right, L, R);
 }
-
-// deletes every node outside [L, R]
 Node* deleteOutside(Node* r, int L, int R) {
     if (!r) return NULL;
     r->left = deleteOutside(r->left, L, R);
